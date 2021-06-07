@@ -24,5 +24,37 @@ namespace WPFBasics
         {
             InitializeComponent();
         }
+
+        private void btnApply_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(txtDescription.Text);
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            this.txtDescription.Text = 
+                this.txtLength.Text =
+                this.txtSupplierName.Text =
+                this.txtSupplierCode.Text =
+                this.txtNote.Text =
+                String.Empty;
+
+            this.chkAssembly.IsChecked =
+                this.chkDrill.IsChecked =
+                this.chkFold.IsChecked =
+                this.chkLaser.IsChecked =
+                this.chkLathe.IsChecked = 
+                this.chkPlasma.IsChecked =
+                this.chkPurchase.IsChecked = 
+                this.chkRoll.IsChecked =
+                this.chkSaw.IsChecked = 
+                this.chkWeld.IsChecked =
+                false;
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            this.txtLength.Text += $" {((CheckBox)sender).Content}";
+        }
     }
 }
